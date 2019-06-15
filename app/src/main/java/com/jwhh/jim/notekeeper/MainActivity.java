@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity
     private void displayNotes() {
         mRecyclerItems.setLayoutManager(notesLayoutManager);
         mRecyclerItems.setAdapter(mNoteRecyclerAdapter);
+
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        Menu menu = navigationView.getMenu();
+        menu.getItem(R.id.nav_notes).setChecked(true);
     }
 
     @Override
