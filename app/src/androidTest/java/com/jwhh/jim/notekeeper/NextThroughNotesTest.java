@@ -1,6 +1,7 @@
 package com.jwhh.jim.notekeeper;
 
 
+import android.support.test.espresso.ViewAssertion;
 import android.support.test.espresso.contrib.DrawerActions;
 import android.support.test.espresso.contrib.NavigationViewActions;
 import android.support.test.espresso.contrib.RecyclerViewActions;
@@ -35,7 +36,6 @@ public class NextThroughNotesTest {
 
         onView(withId(R.id.spinner_courses)).check(
                 matches(withSpinnerText(note.getCourse().getTitle())));
-        onView(withId(R.id.text_note_title)).check(matches(withText(note.getTitle())));
-        onView(withId(R.id.text_note_text)).check(matches(withText(note.getText())));
+        onView(withId(R.id.text_note_title)).check((ViewAssertion) withText(note.getTitle()));
     }
 }
