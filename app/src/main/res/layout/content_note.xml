@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Note title"
+        android:hint="@string/note_title_hint"
         android:inputType="textMultiLine"
         android:textColor="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="@+id/spinner_courses"

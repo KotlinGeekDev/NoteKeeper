@@ -13,4 +13,6 @@
     <string name="menu_courses">Courses</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="note_title_hint">Note title</string>
+    <string name="note_text_hint">Note text</string>
 </resources>
