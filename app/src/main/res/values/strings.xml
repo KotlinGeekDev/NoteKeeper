@@ -15,4 +15,6 @@
     <string name="menu_send">Send</string>
     <string name="note_title_hint">Note title</string>
     <string name="note_text_hint">Note text</string>
+    <string name="nav_share_message">Share with as many as possible!</string>
+    <string name="nav_send_message">OK, it is safe to send.</string>
 </resources>

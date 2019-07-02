@@ -28,12 +28,12 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/note_title_hint"
+        android:importantForAutofill="no"
         android:inputType="textMultiLine"
         android:textColor="@color/colorAccent"
         app:layout_constraintLeft_toLeftOf="@+id/spinner_courses"
         app:layout_constraintRight_toRightOf="@+id/spinner_courses"
-        android:importantForAutofill="no"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_courses" tools:targetApi="o" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_courses" />
 
     <EditText
         android:id="@+id/text_note_text"
@@ -41,10 +41,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:autofillHints=""
+        android:hint="@string/note_text_hint"
         android:inputType="textMultiLine"
         app:layout_constraintLeft_toLeftOf="@+id/text_note_title"
         app:layout_constraintRight_toRightOf="@+id/text_note_title"
-        android:hint="@string/note_text_hint"
-        app:layout_constraintTop_toBottomOf="@+id/text_note_title" tools:targetApi="o"/>
+        app:layout_constraintTop_toBottomOf="@+id/text_note_title" />
 </android.support.constraint.ConstraintLayout>
