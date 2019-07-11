@@ -2,14 +2,15 @@ package com.jwhh.jim.notekeeper;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.List;
 
@@ -35,10 +36,10 @@ public class NoteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mSpinnerCourses = (Spinner) findViewById(R.id.spinner_courses);
+        mSpinnerCourses = findViewById(R.id.spinner_courses);
 
         List<CourseInfo> courses = DataManager.getInstance().getCourses();
         ArrayAdapter<CourseInfo> adapterCourses =
@@ -53,8 +54,8 @@ public class NoteActivity extends AppCompatActivity {
             restoreOriginalNoteValues(savedInstanceState);
         }
 
-        mTextNoteTitle = (EditText) findViewById(R.id.text_note_title);
-        mTextNoteText = (EditText) findViewById(R.id.text_note_text);
+        mTextNoteTitle = findViewById(R.id.text_note_title);
+        mTextNoteText = findViewById(R.id.text_note_text);
 
         if(!mIsNewNote)
             displayNote(mSpinnerCourses, mTextNoteTitle, mTextNoteText);
