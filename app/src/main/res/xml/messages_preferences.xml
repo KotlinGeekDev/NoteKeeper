@@ -14,19 +14,30 @@
   ~ limitations under the License.
   -->
 
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditTextPreference
+        android:defaultValue="true"
+        android:summary="@string/pref_default_user_name"
         app:key="user_display_name"
-        app:title="@string/signature_title"
+        app:title="@string/user_display_name"
         app:useSimpleSummaryProvider="true" />
 
+    <EditTextPreference
+        android:defaultValue="true"
+        android:inputType="textEmailAddress"
+        android:key="user_email_address"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:summary="@string/pref_default_email_address"
+        android:title="@string/title_email_address" />
     <ListPreference
         app:defaultValue="reply"
         app:entries="@array/reply_entries"
         app:entryValues="@array/reply_values"
-        app:key="reply"
-        app:title="@string/reply_title"
+        app:key="user_favorite_social"
+        app:title="@string/pref_title_favorite_social"
         app:useSimpleSummaryProvider="true" />
 
 </PreferenceScreen>
