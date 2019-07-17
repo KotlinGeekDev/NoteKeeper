@@ -38,7 +38,16 @@
     <string name="pref_default_user_name">John Doe</string>
     <string name="pref_title_favorite_social">Favorite social network</string>
     <string-array name="pref_entries_favorite_social">
-
+        <item>Google+</item>
+        <item>Facebook</item>
+        <item>Twitter</item>
     </string-array>
+    <string-array name="pref_values_favorite_social">
+        <item>http://plus.google.com</item>
+        <item>http://facebook.com</item>
+        <item>http://twitter.com</item>
+    </string-array>
+    
+    <string name="pref_default_favorite_social">http://plus.google.com</string>
 
 </resources>

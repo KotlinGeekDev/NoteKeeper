@@ -33,9 +33,9 @@
         android:summary="@string/pref_default_email_address"
         android:title="@string/title_email_address" />
     <ListPreference
-        app:defaultValue="reply"
-        app:entries="@array/reply_entries"
-        app:entryValues="@array/reply_values"
+        app:defaultValue="true"
+        app:entries="@array/pref_entries_favorite_social"
+        app:entryValues="@array/pref_values_favorite_social"
         app:key="user_favorite_social"
         app:title="@string/pref_title_favorite_social"
         app:useSimpleSummaryProvider="true" />
