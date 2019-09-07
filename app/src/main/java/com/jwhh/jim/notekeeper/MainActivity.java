@@ -2,6 +2,7 @@ package com.jwhh.jim.notekeeper;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity
     private LinearLayoutManager notesLayoutManager;
     private CourseRecyclerAdapter mCourseRecyclerAdapter;
     private GridLayoutManager mCourseLayoutManager;
+    private NoteKeeperOpenHelper mDbOpenHelper;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mDbOpenHelper = new NoteKeeperOpenHelper(this);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +68,12 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         initializeDisplayContent();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mDbOpenHelper.close();
+        super.onDestroy();
     }
 
     @Override
@@ -88,6 +100,7 @@ public class MainActivity extends AppCompatActivity
 
     private void initializeDisplayContent() {
 
+        DataManager.loadFromDatabase(mDbOpenHelper);
 
         mRecyclerItems = findViewById(R.id.list_items);
         notesLayoutManager = new LinearLayoutManager(this);
@@ -107,6 +120,7 @@ public class MainActivity extends AppCompatActivity
     private void displayNotes() {
         mRecyclerItems.setLayoutManager(notesLayoutManager);
         mRecyclerItems.setAdapter(mNoteRecyclerAdapter);
+
 
         selectNavigationMenuItem(R.id.nav_notes);
     }
